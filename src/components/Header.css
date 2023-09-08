@@ -1,0 +1,9 @@
+header {
+    text-align: center;
+}
+
+header img {
+    max-width: auto;
+    height: 24rem;
+    margin: 2rem;
+}
