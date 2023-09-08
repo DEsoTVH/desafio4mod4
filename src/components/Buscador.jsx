@@ -3,12 +3,12 @@ import React, { useState } from "react";
 export default function Buscador({ dataPokemon, setDataPokemon }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Función para manejar cambios en el campo de búsqueda.
+  // funcion para manejar los cambios live.
   const handleSearchChange = (event) => {
     const { value } = event.target;
     setSearchTerm(value);
 
-    // Filtrar y ordenar los Pokémon en función del término de búsqueda y el ID.
+    // filtramos y ordenamos Pokémon en función del término de búsqueda y el ID.
     const filtered = dataPokemon
       .filter((pokemon) => {
         return (
@@ -17,7 +17,7 @@ export default function Buscador({ dataPokemon, setDataPokemon }) {
           pokemon.type.toLowerCase().includes(value.toLowerCase())
         );
       })
-      .sort((a, b) => a.id - b.id); // Ordena por ID de menor a mayor.
+      .sort((a, b) => a.id - b.id); // usamos el sort solicitado para ordenar por orden de las ID
 
     setDataPokemon(filtered);
   };
