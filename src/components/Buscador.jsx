@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 
-export default function Buscador({ dataPokemon, setDataPokemon }) {
+export default function Buscador({ dataPokemon, setDataPokemon, originalDataPokemon }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // funcion para manejar los cambios live.
   const handleSearchChange = (event) => {
     const { value } = event.target;
     setSearchTerm(value);
 
-    // filtramos y ordenamos Pokémon en función del término de búsqueda y el ID.
-    const filtered = dataPokemon
+    if (value === "") {
+      // Restaurar los resultados originales cuando el campo de búsqueda esté vacío.
+      setDataPokemon(originalDataPokemon);
+      return;
+    }
+
+    const filtered = originalDataPokemon
       .filter((pokemon) => {
         return (
           pokemon.id.toString().includes(value) ||
@@ -17,7 +21,7 @@ export default function Buscador({ dataPokemon, setDataPokemon }) {
           pokemon.type.toLowerCase().includes(value.toLowerCase())
         );
       })
-      .sort((a, b) => a.id - b.id); // usamos el sort solicitado para ordenar por orden de las ID
+      .sort((a, b) => a.id - b.id);
 
     setDataPokemon(filtered);
   };

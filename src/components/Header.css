@@ -4,6 +4,7 @@ header {
 
 header img {
     max-width: auto;
-    height: 24rem;
-    margin: 2rem;
+    max-height: 24rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
