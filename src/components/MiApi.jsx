@@ -4,7 +4,7 @@ import Buscador from "./Buscador";
 export default function MiApi() {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [originalDataPokemon, setOriginalDataPokemon] = useState([]);
-  const [limit, setLimit] = useState(15);
+  const [limit, setLimit] = useState(20);
   const [offset, setOffset] = useState(0);
 
   const consultarApi = async () => {
@@ -44,7 +44,7 @@ export default function MiApi() {
 
   const showPokemons = dataPokemon.map((pokemon) => (
     <div key={pokemon.id} className="col">
-      <div className="card h-100">
+      <div className="card h-100 card-transparent">
         <img src={pokemon.img} className="card-img-top" alt="..." />
         <div className="card-body text-center">
           <h5 className="card-title">{pokemon.name}</h5>
@@ -64,8 +64,8 @@ export default function MiApi() {
       <Buscador dataPokemon={dataPokemon} setDataPokemon={setDataPokemon} originalDataPokemon={originalDataPokemon} />
       <div className="row row-cols-1 row-cols-xl-5 g-3">{showPokemons}</div>
       <div className="text-center mt-3">
-        <button className="btn btn-outline-danger" onClick={handlePreviousPage}>Anterior</button>
-        <button className="btn btn-outline-danger" onClick={handleNextPage}>Siguiente</button>
+        <button className="btn btn-info" onClick={handlePreviousPage}>Anterior</button>
+        <button className="btn btn-info" onClick={handleNextPage}>Siguiente</button>
       </div>
     </>
   );

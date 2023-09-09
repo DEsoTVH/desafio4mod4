@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Buscador({ dataPokemon, setDataPokemon, originalDataPokemon }) {
+export default function Buscador({ setDataPokemon, originalDataPokemon }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {

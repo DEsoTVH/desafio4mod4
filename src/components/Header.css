@@ -1,10 +1,11 @@
 header {
     text-align: center;
+    color: blue;
+    margin-bottom: 2rem;
 }
 
 header img {
-    max-width: auto;
-    max-height: 24rem;
+    max-width: -webkit-fill-available;
+    max-height: 18rem;
     margin-top: 1rem;
-    margin-bottom: 2rem;
 }

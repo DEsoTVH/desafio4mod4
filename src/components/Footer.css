@@ -1,0 +1,22 @@
+footer {
+    text-align: center;
+    color: blue;
+    margin-bottom: 2rem;
+}
+
+footer img {
+    padding: 1rem;
+    max-width: 15rem;
+    max-height: 10rem;
+    margin-top: 1rem;
+}
+
+.footer-icon a {
+  font-size: 1.5rem;
+  margin: 0 0.3rem;
+}
+
+.footer-icon a:hover {
+  color: #4799eb;
+}
+
