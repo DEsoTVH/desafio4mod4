@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Buscador from "./Buscador";
+import Buscador from "./Buscador/Buscador";
 
 export default function MiApi() {
   const [dataPokemon, setDataPokemon] = useState([]);
@@ -44,7 +44,7 @@ export default function MiApi() {
 
   const showPokemons = dataPokemon.map((pokemon) => (
     <div key={pokemon.id} className="col">
-      <div className="card h-100 card-transparent">
+      <div className="card h-100">
         <img src={pokemon.img} className="card-img-top" alt="..." />
         <div className="card-body text-center">
           <h5 className="card-title">{pokemon.name}</h5>
